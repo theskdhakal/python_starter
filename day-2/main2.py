@@ -45,3 +45,28 @@ weight=float(input('enter your weight in kg: '))
 BMI= (weight)/(height * height)
 
 print(int(BMI))
+
+
+
+# rounding off the number 
+# print (round(9/2,4))  -- 4 denote the decimal places to be round off 
+# print(8//3)-flow division, just gives the whole number 
+
+# maniputing the value using previous value
+# score = 0
+
+# score += 1 // increase score by 1
+# score -=1 // decrease score by 1
+
+
+#  ------------------- f-String ------------------------------
+score = 0
+height=1.8
+isWinning =True
+
+#f-string
+
+print(f"your score is {score}, your height is {height}")
+# using f string convert type itself ,thus eliminating the need of converting type conversion and concatenation using + sign
+
+
