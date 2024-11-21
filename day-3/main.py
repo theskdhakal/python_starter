@@ -10,6 +10,8 @@ if height == 120:
         print("$5")
     elif 12<age<18:
          print("$10")
+    elif 45 <= age <= 55:
+         print("$0")
     else:
          print("$20")
 else:
