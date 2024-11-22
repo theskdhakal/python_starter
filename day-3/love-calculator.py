@@ -4,7 +4,7 @@ your_name=input(("Whats your name ? \n").lower())
 lover_name=input(("Whats your loveer's name ? \n").lower())
 
 combined_name=str(your_name)+ str(lover_name)
-print(combined_name)
+
 
 
 count_of_t=combined_name.count("t")
@@ -24,7 +24,6 @@ total_second_number=count_of_l + count_of_o + count_of_v + count_of_e
 
 total_percentage=int(str(total_first_number) + str(total_second_number))
 
-print(total_percentage)
 
 
 if total_percentage <= 10 or total_percentage >= 90:
