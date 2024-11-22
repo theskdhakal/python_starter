@@ -1,24 +1,46 @@
-import random
-import my_module
+# import random
+# import my_module
 
 
 
 
-# way to generate the random integer in pyhton
+# # way to generate the random integer in pyhton
 
-random_integer= random.randint(1,100)
-print(random_integer)
+# random_integer= random.randint(1,100)
+# print(random_integer)
 
-# Module
-print(my_module.pi)
+# # Module
+# print(my_module.pi)
 
 
-# generate random floating points
-random_floating=random.random() 
-# the code above genrate random float number between 0 and 1
+# # generate random floating points
+# random_floating=random.random() 
+# # the code above genrate random float number between 0 and 1
 
-random_floating_between=random.uniform(1.5,7.8)
-print(random_floating_between)
+# random_floating_between=random.uniform(1.5,7.8)
+# print(random_floating_between)
 
-print(random_floating)
+# print(random_floating)
+
+
+# _______________________________________Understanding the offset and Appending items to Lists________________________________________________
+# Lists
+states_of_america=["Delaware", "colorado", "Iowa", "....."]
+
+
+# to alter the list// using the index , any list items can be indexed  and henced updated
+states_of_america[1]="colarada"
+
+# to add the item in list
+states_of_america.append("Shivaland")
+
+
+
+# add other list to the list
+states_of_america.extend(["abcd","defg"])
+
+print(states_of_america)
+
+
+
 
