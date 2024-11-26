@@ -1,4 +1,4 @@
-import random;
+import random
 
 letters=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']   
 
@@ -20,12 +20,12 @@ random_numbers=random.sample(numbers,nr_symbols)
 
 random_password_list=random_letters + random_symbols + random_numbers
 
-print(random_password_list)
+
 
 # shuffle the items in array
-shuffled_passowords_list=random.shuffle(random_password_list)
-print(shuffled_passowords_list)
+random.shuffle(random_password_list)
 
-# random_password=''.join(shuffled_passowords_list)
-# print(random_password)
+
+random_password=''.join(random_password_list)
+print(random_password)
 
