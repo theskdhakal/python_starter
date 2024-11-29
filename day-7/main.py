@@ -26,7 +26,6 @@ for letter in letter_list:
         if guess in letter_list[i]:
             print("right")
             
-            
         else:
             print("wrong")
         
