@@ -1,11 +1,113 @@
 import random
 
-word_list=["glass","table","donkey","laptop"]
+word_list= [
+    "compass",
+    "fortune",
+    "journey",
+    "lantern",
+    "mystery",
+    "thunder",
+    "whistle",
+    "courage",
+    "harvest",
+    "mirror"
+]
 
-chosen_word=random.choice(word_list)
-print(chosen_word)
-print(chosen_word[2])
+hints = [
+    "A tool used to find directions.",
+    "Luck, often related to wealth or success.",
+    "An act of traveling from one place to another.",
+    "A portable light source often used outdoors.",
+    "Something that is difficult to explain or understand.",
+    "The loud sound during a storm.",
+    "A sound made by forcing air through lips or a device.",
+    "The ability to face danger without fear.",
+    "The act of gathering crops.",
+    "A reflective surface you look into."
+]
 
+
+stages = [
+    '''
+        ____________________                     
+       |                    |
+       O                    |
+                            |
+                            |
+                            |
+                            |
+                            |
+  =============================
+    ''',
+    '''
+       _____________________                     
+       |                    |
+       O                    |
+      /                     |
+                            |
+                            |
+                            |
+                            |
+  =============================
+    ''',
+    '''
+       _____________________                     
+       |                    |
+       O                    |
+      / \\                  |
+                            |
+                            |
+                            |
+                            |
+  =============================
+    ''',
+    '''
+       _____________________                     
+       |                    |
+       O                    |
+      /|\\                  |
+       |                    |
+                            |
+                            |
+                            |
+  =============================
+    ''',
+    '''
+       _____________________                     
+       |                    |
+       O                    |
+      /|\\                  |
+       |                    |
+      /                     |
+                            |
+                            |
+  =============================
+    ''',
+    '''
+       _____________________                     
+       |                    |
+       O                    |
+      /|\\                   |
+       |                    |
+      / \\                   |
+                            |
+                            |
+  =============================
+    '''
+]
+   
+  
+
+stages.reverse()
+
+index=random.randint(0,len(word_list)-1)
+chosen_word=word_list[index]
+hint=hints[index]
+
+print("________________________________WELCOME TO HANGMAN GAME______________________________________")
+
+
+print(f"Your hint is : {hint}")
 
 chosen_word_length=len(chosen_word)
 
@@ -17,27 +119,46 @@ for number in range(chosen_word_length):
 print(display)
 
 
-i=0
 
-while i<chosen_word_length:
-    
+life=len(stages)-1
+
+
+game_over=False
+
+while game_over is False:
     guess=input("guess a letter: ").lower()
 
-    if guess not in chosen_word:
-        print("you guessed wrong letter")
-    else:
-        for position in range(0,chosen_word_length):
+    if guess in display:
+        print("You have already guessed this letter")
+     
+
+    elif guess in chosen_word:
+         for position in range(0,chosen_word_length):
             letter=chosen_word[position]
             if letter==guess:
                 display[position]=letter
-    
-    print(display)
-    i+=1
+        
+         print(display)
+         
+         if "_" not in display:
+                  game_over=True
+                  print("****** You won the game *********")
 
-if "_" in display:
-    print("You lost the game")
-else:
-    print("You won the game")
+  
+       
+    else:
+        if life > 0:
+            print(stages[life])
+            life -=1
+        else:
+            print(stages[life])
+            print("You ran out of life. You lost the game")
+            game_over=True
+    
+   
+   
+
+
 
 
 
