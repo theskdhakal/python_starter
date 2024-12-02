@@ -1,5 +1,9 @@
 
-alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
+from art import logo
+
+print(logo)
+
+alphabet=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',] 
 
 
 
@@ -41,20 +45,24 @@ def ceaser(direction,text,shift):
 
     if direction=='decode':
             shift *= -1
+
+    if shift >26:
+         modulus=shift%26
+         shift=modulus
     
     for letter in text:
-        i=alphabet.index(letter)
-        
-        new_index= i + shift
-        message += alphabet[new_index]
+        if letter in alphabet:
+            i=alphabet.index(letter)
+            new_index= i + shift
+            message += alphabet[new_index]
+        else:
+             message += letter
     
     print(f"the {direction}d text is {message}")
 
 
 
 
-    
-    
 
 while True:
 
