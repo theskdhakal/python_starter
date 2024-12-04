@@ -27,3 +27,28 @@ programming_dictionary ["Bug"]="kira"
 for key in programming_dictionary:
     print(key)
     print(programming_dictionary[key])
+
+
+# _____________________________________Nesting__________________________________________________
+
+travel_log=[
+    {
+    "Country":"France",
+    "cities_visited":["Paris","Dijon","Lile"],
+    },
+
+
+   {
+       "Country":"Germany",
+       "cities_visited":["Berlin","Hamburg","Stuttgart"],
+   },
+
+    # list nested inside dictionary, which in itself nested in another dictionary
+   {"Country":"Australia",
+    "cities_visited":{
+        "cities_visited": ["Sydney", "Melbourne", "Perth"]
+        },
+   }
+
+    # nesting  a dictionary in list
+]
