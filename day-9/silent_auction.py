@@ -17,15 +17,7 @@ def silent_auction(name,bid):
     
     bid_list.append(new_bid)
 
-    highest_bid=0
-    winner=''
-    for bid in bid_list:
-       if bid["amount"] > highest_bid:
-           highest_bid=bid["amount"]
-           winner=bid["name"]
-    
-
-    print(f"The highest bid is {highest_bid} by {winner}")
+   
 
     
 
@@ -37,11 +29,19 @@ while True:
 
     silent_auction(name=name,bid=int(amount))
 
-    more_bid=input("Are the more bidder? Y or N").lower()
-    
-
+    more_bid=input("Are the more bidder? Y or N: ").lower()
 
 
     if more_bid != 'y':
+        highest_bid=0
+        winner=''
+        for bid in bid_list:
+         if bid["amount"] > highest_bid:
+           highest_bid=bid["amount"]
+           winner=bid["name"]
+    
 
-        print("finished")
+        print(f"The highest bid is {highest_bid} by {winner}")
+    
+
+       
