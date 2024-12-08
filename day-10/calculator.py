@@ -13,26 +13,44 @@ def multiply(n1,n2):
     return n1*n2
 
 #add
-def division(n1,n2):
+def divide(n1,n2):
     return n1/n2
 
 
-{
+operations={
     "+":add,
     "-":subtract,
     "*":multiply,
-    "/":division
+    "/":divide
 }
 
 
-# operations=[]
+def calculator():
 
-# def calculation(key,value):
-#     new_operation={
-#         key:value
-#     }
+    answer=None
 
-#     operations.append(new_operation)
-#     print(operations)
+    while True:
+        if answer is not None:
+            num1=answer
+        else:
+            num1=int(input("whats the first number ? :"))
+        
+        num2=int(input("whats the next number ? :"))
+        
 
-# calculation("add","+")
+        operation_symbol=input("Which operation do you want to perform ? :")
+        calcuting_function=operations[operation_symbol]
+        answer=calcuting_function(num1,num2)
+
+        print(f"{num1}{operation_symbol}{num2}={answer}")
+
+        more=input("Do you want to continue this calculation: type y for continue, n for starting new calculation : ").lower()
+
+        if more !="y":
+            calculator()
+
+
+
+calculator()
+
+    
