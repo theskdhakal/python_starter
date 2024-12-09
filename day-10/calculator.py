@@ -1,5 +1,9 @@
 #calculator
 
+
+from art import logo
+
+
 #add
 def add(n1,n2):
     return n1+n2
@@ -26,6 +30,7 @@ operations={
 
 
 def calculator():
+    print(logo)
 
     answer=None
 
@@ -33,9 +38,9 @@ def calculator():
         if answer is not None:
             num1=answer
         else:
-            num1=int(input("whats the first number ? :"))
+            num1=float(input("whats the first number ? :"))
         
-        num2=int(input("whats the next number ? :"))
+        num2=float(input("whats the next number ? :"))
         
 
         operation_symbol=input("Which operation do you want to perform ? :")
