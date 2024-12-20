@@ -47,12 +47,26 @@ for _ in range(2):
      computer_cards.append(deal_card())
 
 
-user_score=calculate_score(user_cards)
-computer_score=calculate_score(computer_cards)
-
-print(f"Your cards: {user_cards}, current score:{user_score}")
-print(f"computer's first card: {computer_cards[0]}")
 
 
-if user_score==0 or computer_score==0 or user_score > 21:
-     is_game_over=True
+
+while not is_game_over:
+     user_score=calculate_score(user_cards)
+     computer_score=calculate_score(computer_cards)
+
+     print(f"Your cards: {user_cards}, current score:{user_score}")
+     print(f"computer's first card: {computer_cards[0]}")
+
+
+     if user_score==0 or computer_score==0 or user_score > 21:
+          is_game_over=True
+     else:
+          ask_user=input("Do you want to draw another card ? Y or N : ").lower()
+
+          if ask_user == "y":
+               user_cards.append(deal_card())
+          else:
+               is_game_over=True
+
+
+
