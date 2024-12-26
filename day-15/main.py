@@ -33,12 +33,23 @@ resources = {
 
 is_machineOn=True
 
+
+
+
+
+def selected_coffee_data(coffee):
+
+    req_water=MENU[coffee]['ingredients']['water']
+    req_coffee=MENU[coffee]['ingredients']['coffee']
+    req_milk=MENU[coffee]['ingredients'].get('milk',0)
+    total_cost=MENU[coffee]['cost']
+    print(req_water,req_coffee,req_milk,total_cost)
+
+
 coffee_type=input("What would you like? (espresso/latte/cappuccino): ").lower()
 
-
-
 if coffee_type == 'espresso':
-        print('espresso')
+        selected_coffee_data('espresso')
 elif coffee_type == 'latte':
         print('latte')
 elif coffee_type == 'cappuccino':
@@ -49,7 +60,7 @@ elif coffee_type == 'off':
         is_machineOn=False
 else:
     print('Invalid choice')
-
+#
 
 
 
