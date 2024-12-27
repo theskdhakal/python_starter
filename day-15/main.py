@@ -56,7 +56,8 @@ def check_sufficient_resources(req_water,req_coffee,req_milk):
     if req_coffee > resources['coffee']:
         print('Not enough coffee in machine')
         return False
-    return True
+    else:
+        return True
 
 
 def inset_coins(total_cost):
@@ -69,6 +70,7 @@ def inset_coins(total_cost):
 
     if total_amount_paid < total_cost:
         print("Sorry that's not enough money. Money refunded")
+        return False
     else:
         resources['money'] =resources.get('money',0) + total_cost
 
@@ -77,6 +79,8 @@ def inset_coins(total_cost):
             rounded_change_back=round(change_back,2)
 
             print(f"Here is ${rounded_change_back} dollar  in change. ")
+
+        return True
 
 
 
@@ -88,16 +92,16 @@ while  is_machineOn:
     if coffee_type in MENU:
         water_needed, coffee_needed, milk_needed,final_cost =selected_coffee_data(coffee_type)
 
-        if check_sufficient_resources(water_needed, coffee_needed, milk_needed,):
-                 inset_coins(final_cost)
+        if check_sufficient_resources(water_needed, coffee_needed, milk_needed):
+                 if inset_coins(final_cost):
 
-                 print(f'preparing your {coffee_type}')
+                     print(f'preparing your {coffee_type}')
 
-                 resources['water'] -= water_needed
-                 resources['coffee'] -= coffee_needed
-                 resources['milk'] -=milk_needed
+                     resources['water'] -= water_needed
+                     resources['coffee'] -= coffee_needed
+                     resources['milk'] -=milk_needed
 
-                 print(f"Here is your {coffee_type}.Enjoy !")
+                     print(f"Here is your {coffee_type}.Enjoy !")
 
     elif coffee_type == 'report':
             print(resources)
