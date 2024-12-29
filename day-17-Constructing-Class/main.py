@@ -1,31 +1,14 @@
-# creating a class
-class User:
-    def __init__(self,user_id,username):
-        self.id=user_id
-        self.username=username
-        self.followers=0  #a default value can be provided to an attribute , for eg follower count of instagram initially
-        self.following=0
+from question_model import Question
+from data import question_data
 
-    def follow(self, user):
-        user.followers +=1
-        self.following +=1
+question_bank=[]
 
 
+#  iterating through question data and creating a question object with each data and saving in list
 
+for item in question_data:
+    question_item=Question(item["text"],item["answer"])
+    question_bank.append(question_item)
 
-
-# creating an object , instance of above class
-user_1=User("001","shiva")
-user_2=User("002","Mona Lisa")
-
-
-# # adding attribute
-# user_1.id="001"
-# user_1.name="Shiva"
-
-user_1.follow(user_2)
-print(user_1.following)
-print(user_1.followers)
-print(user_2.following)
-print(user_2.followers)
+print(question_bank[0].text)
 
