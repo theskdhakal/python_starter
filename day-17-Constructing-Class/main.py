@@ -8,7 +8,7 @@ question_bank=[]
 #  iterating through question data and creating a question object with each data and saving in list
 
 for item in question_data:
-    question_item=Question(item["text"],item["answer"])
+    question_item=Question(item["question"],item["correct_answer"])
     question_bank.append(question_item)
 
 quiz=QuizBrain(question_bank)
