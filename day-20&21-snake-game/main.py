@@ -36,10 +36,25 @@ while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
+
+
     #detect collision with food, distance is always measured from center of item
     if snake.head.distance(food) < 15:
+       snake.add_tails()
        food.refresh()
        scoreboard.increase_score()
+
+
+    # detect collision with wall
+    if snake.head.xcor() > 290 or snake.head.xcor() < -290 or snake.head.ycor() >290 or snake.head.ycor() < -290 :
+        game_is_on =False
+        scoreboard.game_over()
+
+    #detect collision with tail
+    for segment in snake.segments[1:]:
+       if snake.head.distance(segment) < 10:
+            game_is_on=False
+            scoreboard.game_over()
 
 
 
