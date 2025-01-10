@@ -1,5 +1,5 @@
-fruits=["Apple","Peach","Pear"]
-
+fruits=["Apple","2","Peach","Pear"]
+# new_fruits='+'.join(fruits)
 
 # ___________________________
 #  Loop
@@ -8,6 +8,9 @@ fruits=["Apple","Peach","Pear"]
 # for loop
 for fruit in fruits:
     print(fruit)
+    print(type(fruit))
+
+# print(new_fruits)
 
 
 # ++++++++++++++++++++++ for Lopp with range +++++++++++++++++++++++++++++++++++++++++++++

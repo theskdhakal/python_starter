@@ -17,7 +17,7 @@ def silent_auction(name,bid):
     
     bid_list.append(new_bid)
 
-   
+
 
     
 

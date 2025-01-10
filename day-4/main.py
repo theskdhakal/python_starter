@@ -29,7 +29,10 @@ states_of_america=["Delaware", "colorado", "Iowa", "....."]
 
 
 # to alter the list// using the index , any list items can be indexed  and henced updated
-states_of_america[1]="colarada"
+states_of_america[1]="colo"
+
+print(states_of_america)
+
 
 # to add the item in list
 states_of_america.append("Shivaland")

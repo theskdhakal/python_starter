@@ -9,4 +9,4 @@ def can_determiner(height,width):
     total_can_required=math.ceil((height*width)/coverage)
     print(f"It requires {total_can_required} can of paint to cover the area")
     
-can_determiner(height=h,width=w)
+can_determiner(width=w,height=h)

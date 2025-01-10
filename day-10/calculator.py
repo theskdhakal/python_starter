@@ -4,6 +4,7 @@
 from art import logo
 
 
+
 #add
 def add(n1,n2):
     return n1+n2
@@ -46,6 +47,7 @@ def calculator():
         operation_symbol=input("Which operation do you want to perform ? :")
         calcuting_function=operations[operation_symbol]
         answer=calcuting_function(num1,num2)
+
 
         print(f"{num1}{operation_symbol}{num2}={answer}")
 
