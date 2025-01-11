@@ -36,3 +36,23 @@ data=pandas.read_csv("weather_data.csv")
 
 print(data['temp'].max())
 
+
+# get data in column
+# data["column name"]
+# data.column-name
+
+# get data in row
+# data[data.attribute=="desired attribute"]
+
+print(data[data["day"]=="Monday"])
+
+
+#  find the row where temperature is maximum
+print(data[data["temp"]==data.temp.max()])
+
+#  find the condition of row where temperature is maximum
+print(data[data["temp"]==data.temp.max()].condition)
+
+
+monday=data[data.day=="Monday"]
+print(monday["temp"])
